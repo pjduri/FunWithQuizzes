@@ -18,9 +18,4 @@ public class TrueFalse : Question
         return GetUserAnswer() ? PointValue : 0;
     }
 
-    public override List<string> GetCorrectAnswers()
-    {
-        return CorrectAnswers;
-    }
-
 }
