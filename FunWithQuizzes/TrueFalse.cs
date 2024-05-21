@@ -2,11 +2,8 @@
 
 public class TrueFalse : Question
 {
-    public bool CorrectAnswer { get; set; }
-
-    public TrueFalse(string question, int pointValue, bool correctAnswer) : base(question, pointValue)
+    public TrueFalse(string question, int pointValue, List<string> correctAnswers) : base(question, pointValue, correctAnswers)
     {
-        CorrectAnswer = correctAnswer;
     }
 
     public override bool GetUserAnswer()
@@ -16,8 +13,4 @@ public class TrueFalse : Question
         return userAnswer == "1";
     }
 
-    public override double ScoreQuestion()
-    {
-        return GetUserAnswer() == CorrectAnswer ? PointValue : 0;
-    }
 }
