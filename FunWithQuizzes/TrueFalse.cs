@@ -6,11 +6,21 @@ public class TrueFalse : Question
     {
     }
 
-    public override bool GetUserAnswer()
+    public bool GetUserAnswer()
     {
-        Console.WriteLine("Your answer (1 for true, 2 for false): ");
+        Console.WriteLine("Your answer (type true or false): ");
         string? userAnswer = Console.ReadLine();
-        return userAnswer == "1";
+        return userAnswer == CorrectAnswers[0];
+    }
+
+    public override int ScoreQuestion()
+    {
+        return GetUserAnswer() ? PointValue : 0;
+    }
+
+    public override List<string> GetCorrectAnswers()
+    {
+        return CorrectAnswers;
     }
 
 }
